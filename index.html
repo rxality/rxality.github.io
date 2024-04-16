@@ -3,38 +3,193 @@
 
 <head>
     <style>
-        html,
-        body {
-            height: 100%;
+        html {
             overflow: hidden;
+            caret-color: transparent;
         }
 
         body {
+            height: 100%;
             display: flex;
             align-items: center;
             background-color: #000000;
         }
-    </style>
 
-    <script>window.
-            onload
-            = function () {
+        /* ================================================================= */
+
+        .outer {
+            display: table;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .middle {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .inner {
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            color: #ffffff;
+        }
+
+        .background {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+
+        /* ================================================================= */
+
+        .card {
+            width: 17em;
+            height: 22.5em;
+            background: #171717;
+            transition: 1s ease-in-out;
+            clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card span {
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            display: block;
+            font-size: 1.5em;
+        }
+
+        .card .info {
+            font-weight: 400;
+            color: white;
+            display: block;
+            text-align: center;
+            font-size: 0.72em;
+            margin: 1em;
+        }
+
+        .card .img {
+            width: 9em;
+            height: 9em;
+            border-radius: 15px;
+            margin: auto;
+            margin-top: -2%;
+        }
+
+        .card .links {
+            margin-top: 1em;
+            display: flex;
+            justify-content: center;
+            gap: 1.5em;
+        }
+
+        .card a {
+            color: white;
+            transition: .4s ease-in-out;
+        }
+
+        .card a:hover {
+            color: grey;
+        }
+
+        .card .card-username span {
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            display: block;
+            font-size: 1.5em;
+            margin: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-username">
+            <span>Ruben</span>
+        </div>
+        <div class="img">
+            <img src="./assets/avatar.jpg" , style="width:9em;height:9em;border-radius: 50%;">
+        </div>
+        <p class="info">
+            <span>
+                Programmer & gamer
+                <br>
+                ✩
+                <br>
+                <script>
+                    const birthDate = new Date("May 31, 2001");
+                    const marriedDate = new Date("June 26 2023");
+                    const currentDate = new Date();
+                    let adjustBirthYear = 0;
+                    let adjustMarriedYear = 0;
+                    let marriedYears = currentDate.getFullYear() - marriedDate.getFullYear();
+                    let marriedMonths = 12 - ((marriedDate.getMonth() - currentDate.getMonth()) + 1);
+
+                    if ((currentDate.getMonth() <= birthDate.getMonth()) || (currentDate.getDate() <= birthDate.getDate())) {
+                        adjustBirthYear++;
+                    }
+
+                    if ((currentDate.getMonth() <= marriedDate.getMonth()) || (currentDate.getDate() <= marriedDate.getDate())) {
+                        adjustMarriedYear++;
+                    }
+
+                    let marriedYearsSince = (currentDate.getFullYear() - marriedDate.getFullYear()) - adjustMarriedYear;
+                    let readableBirthYear = `${(currentDate.getFullYear() - birthDate.getFullYear()) - adjustBirthYear} years old`;
+                    let readableOutput = `${marriedYearsSince ? `${marriedYearsSince} year${marriedYearsSince > 1 ? 's' : ''} and ` : ''}${marriedMonths} month${marriedMonths ? 's' : ''} married`;
+
+                    document.write(readableBirthYear + "<br>" + readableOutput);
+                </script>
+            </span>
+        </p>
+        <div class="links">
+            <a href="https://github.com/rxality" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" viewBox="0 0 24 24">
+                    <path fill="white"
+                        d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2" />
+                </svg></a>
+            <a href="https://discord.gg/tendo" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" viewBox="0 0 256 199">
+                    <path fill="white"
+                        d="M216.856 16.597A208.502 208.502 0 0 0 164.042 0c-2.275 4.113-4.933 9.645-6.766 14.046c-19.692-2.961-39.203-2.961-58.533 0c-1.832-4.4-4.55-9.933-6.846-14.046a207.809 207.809 0 0 0-52.855 16.638C5.618 67.147-3.443 116.4 1.087 164.956c22.169 16.555 43.653 26.612 64.775 33.193A161.094 161.094 0 0 0 79.735 175.3a136.413 136.413 0 0 1-21.846-10.632a108.636 108.636 0 0 0 5.356-4.237c42.122 19.702 87.89 19.702 129.51 0a131.66 131.66 0 0 0 5.355 4.237a136.07 136.07 0 0 1-21.886 10.653c4.006 8.02 8.638 15.67 13.873 22.848c21.142-6.58 42.646-16.637 64.815-33.213c5.316-56.288-9.08-105.09-38.056-148.36M85.474 135.095c-12.645 0-23.015-11.805-23.015-26.18s10.149-26.2 23.015-26.2c12.867 0 23.236 11.804 23.015 26.2c.02 14.375-10.148 26.18-23.015 26.18m85.051 0c-12.645 0-23.014-11.805-23.014-26.18s10.148-26.2 23.014-26.2c12.867 0 23.236 11.804 23.015 26.2c0 14.375-10.148 26.18-23.015 26.18" />
+                </svg></a>
+            <a href="https://www.instagram.com/rxality/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+                    width="16" height="16" viewBox="0 0 24 24">
+                    <path fill="white"
+                        d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
+                </svg></a>
+        </div>
+    </div>
+    <div>
+        <script>
+            window.onload = function () {
                 Particles.
                     init
                     ({
                         selector:
                             '.background',
                         color: ['#d1d1e0', '#e0e0eb', '#f0f0f5', '#ffffff'],
-                        connectParticles: true
+                        connectParticles: true,
                     });
             };</script>
-</head>
 
-<body>
-
-    <canvas class="background"></canvas>
-    <script src="./particles.js"></script>
-
+        <canvas class="background"></canvas>
+        <script src="./particles.js"></script>
+    </div>
 </body>
 
 </html>
