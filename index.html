@@ -1,50 +1,31 @@
 <!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1"
-	charset="utf-8">
 <html lang="en-US">
 	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Tendō</title>
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="images/apple-touch-icon.png" />
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="images/favicon-32x32.png" />
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="images/favicon-16x16.png" />
-		<link rel="manifest" href="site.webmanifest" />
-
-		<link rel="stylesheet" href="css/index.css" />
-		<link rel="stylesheet" href="css/card.css" />
-		<link rel="stylesheet" href="css/particles.css" />
-
+		<link rel="apple-touch-icon" sizes="180x180"
+			href="images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32"
+			href="images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16"
+			href="images/favicon-16x16.png">
+		<link rel="manifest" href="site.webmanifest">
+		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/card.css">
+		<link rel="stylesheet" href="css/particles.css">
 		<script src="js/index.js"></script>
 	</head>
-
 	<body>
 		<div class="card">
 			<div class="card-username">
 				<span>Ruben</span>
 			</div>
 			<div class="img">
-				<img id="img-pfp"
-					src="images/avatar.jpg" ,
-					alt="Gon Freecs, from HxH" />
+				<img id="img-pfp" src="images/avatar.jpg" alt="Gon Freecs">
 			</div>
 			<p class="info">
-				<span>
-					Programmer & Gamer
-					<br />
-					✩
-					<br />
-					<span id="time-since"></span>
-				</span>
+				<span id="bio"></span>
 			</p>
 			<div class="links">
 				<a title="GitHub" href="https://github.com/rxality" target="_blank"><svg
@@ -74,11 +55,20 @@
 						<path
 							fill="white"
 							d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" /></svg></a>
+
+				<a id="mail-to" title="Email" href="mailto:rxality@tendo.cc"
+					target="_top"><svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="21"
+						height="21"
+						viewBox="3 3 24 24">
+						<path
+							fill-rule="evenodd" clip-rule="evenodd"
+							d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z"
+							fill="white" /></svg></a>
 			</div>
 		</div>
-
 		<canvas class="background"></canvas>
 		<script src="js/particles.js"></script>
-
 	</body>
 </html>
