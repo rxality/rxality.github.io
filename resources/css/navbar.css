@@ -1,0 +1,39 @@
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: -32px;
+
+}
+
+.navbar-logo img {
+    width: 36%;
+    height: auto;
+}
+
+.navbar-logo, .navbar-links ul {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-links ul li {
+    margin: 0 32px;
+}
+
+.dark-theme .navbar-links a {
+    text-decoration: none;
+    color: #F4F3F2;
+}
+
+
+.light-theme .navbar-links a {
+    text-decoration: none;
+    color: #121212;
+}
