@@ -1,4 +1,4 @@
-/* Theme Toggle CSS */
+/* Theme Toggle */
 
 body {
     background-color: #121212;
@@ -27,7 +27,7 @@ body.light-theme {
     cursor: pointer;
 }
 
-/* Navbar CSS */
+/* Navbar */
 
 .navbar-container {
     display: flex;
@@ -68,9 +68,12 @@ body.light-theme {
     color: #121212;
 }
 
-/* Log In Button CSS */
+/* Discord */
 
-.log-in-btn {
-    padding: 8px 16px;
-    border-radius: 5%;
+.container .discord {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center items vertically */
+    padding-right: 5%;
+    margin-top: 5%;
 }
